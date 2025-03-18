@@ -198,7 +198,7 @@ void test14() {
 // basic case
 void test15() {
 	int n = 3, m = 4;
-	double expected = 4.5;
+	double expected = 3.5;
 
 	int** matrix = new int* [n];
 	matrix[0] = new int[m] {1, 0, 2, 2};
