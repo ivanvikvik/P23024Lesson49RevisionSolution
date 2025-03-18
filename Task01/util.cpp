@@ -18,6 +18,10 @@ void print_test(int** matrix, int n, int m, double expected, string test_name) {
 	HANDLE h;
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 
+	if (n > 0 && m > 0 && matrix != nullptr) {
+		cout << "Current Matrix:\n" << convert(matrix, n, m);
+	}
+	
 	double actual = calculate_arithmetical_mean_of_nonzero_elements(matrix, n, m);
 	bool result = actual == expected;
 
@@ -40,7 +44,6 @@ void print_test(int** matrix, int n, int m, double expected, string test_name) {
 	SetConsoleTextAttribute(h, (0 | 15));
 
 	if (!result) {
-		cout << "Matrix:\n" << convert(matrix, n, m);
 		cout << "Result arithmetical mean: expected = " << expected
 			<< ", but actual = " << actual << endl;
 	}

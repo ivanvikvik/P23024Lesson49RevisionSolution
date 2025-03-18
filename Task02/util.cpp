@@ -18,6 +18,10 @@ void print_test(int** matrix, int n, int expected, string test_name) {
 	HANDLE h;
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 
+	if (n > 0 && matrix != nullptr) {
+		cout << "Current Matrix:\n" << convert(matrix, n);
+	}
+
 	int actual = sum_main_and_second_diagonales_elements(matrix, n);
 	bool result = actual == expected;
 
@@ -40,7 +44,6 @@ void print_test(int** matrix, int n, int expected, string test_name) {
 	SetConsoleTextAttribute(h, (0 | 15));
 
 	if (!result) {
-		cout << "Matrix:\n" << convert(matrix, n);
 		cout << "Result arithmetical mean: expected = " << expected
 			<< ", but actual = " << actual << endl;
 	}
