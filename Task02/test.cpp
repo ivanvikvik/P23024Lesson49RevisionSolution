@@ -115,7 +115,7 @@ void test08() {
 // matrix with all zero elements
 void test09() {
 	int n = 3;
-	int expected = 0.0;
+	int expected = 0;
 
 	int** matrix = new int* [n];
 
