@@ -44,7 +44,7 @@ void print_test(int** matrix, int n, int expected, string test_name) {
 	SetConsoleTextAttribute(h, (0 | 15));
 
 	if (!result) {
-		cout << "Result arithmetical mean: expected = " << expected
+		cout << "Result sum: expected = " << expected
 			<< ", but actual = " << actual << endl;
 	}
 
