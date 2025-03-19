@@ -8,9 +8,5 @@
 #include "logic.h"
 
 int** compress(int** matrix, int n, int m, int* cn, int* cm) {
-	if (n <= 0 || m <= 0 || matrix == nullptr) {
-		return nullptr;
-	}
-
 	return nullptr;
 }

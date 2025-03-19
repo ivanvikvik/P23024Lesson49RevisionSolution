@@ -14,7 +14,7 @@ string convert(int** matrix, int n, int m) {
 	return s;
 }
 
-void print_test(int** matrix, int n, int m, double expected, string test_name) {
+void print_test(int** matrix, int n, int m, int expected, string test_name) {
 	HANDLE h;
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -22,7 +22,7 @@ void print_test(int** matrix, int n, int m, double expected, string test_name) {
 		cout << "Current Matrix:\n" << convert(matrix, n, m);
 	}
 	
-	double actual = calculate_arithmetical_mean_of_nonzero_elements(matrix, n, m);
+	int actual = get_min_maximum(matrix, n, m);
 	bool result = actual == expected;
 
 	SetConsoleTextAttribute(h, (0 | 15));
@@ -44,7 +44,7 @@ void print_test(int** matrix, int n, int m, double expected, string test_name) {
 	SetConsoleTextAttribute(h, (0 | 15));
 
 	if (!result) {
-		cout << "Result arithmetical mean: expected = " << expected
+		cout << "Result of min maximum: expected = " << expected
 			<< ", but actual = " << actual << endl;
 	}
 
